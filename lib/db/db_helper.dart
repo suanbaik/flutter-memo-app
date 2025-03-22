@@ -112,28 +112,33 @@ class DatabaseHelper {
     final memos = await db.query('memos');
     if (memos.isEmpty) {
       int memoId1 = await db.insert('memos', {
+        'title': '단아치과의원',
         'content': '원장님 미팅, 다음번에 브로셔 가지고 다시 한 번 미팅',
         'createdAt': DateTime.now().toIso8601String(),
       });
 
       int memoId2 = await db.insert('memos', {
+        'title': '단아치과의원',
         'content': '원장님 미팅, 다음번에 브로셔 가지고 다시 한 번 미팅',
         'createdAt': DateTime.now().toIso8601String(),
       });
 
       await db.insert('comments', {
+        'title': '단아치과의원',
         'memoId': memoId1,
         'content': '원장님 미팅, 다음번에 브로셔 가지고 다시 한 번 미팅',
         'createdAt': DateTime.now().toIso8601String(),
       });
 
       await db.insert('comments', {
+        'title': '단아치과의원',
         'memoId': memoId1,
         'content': '원장님 미팅, 다음번에 브로셔 가지고 다시 한 번 미팅',
         'createdAt': DateTime.now().toIso8601String(),
       });
 
       await db.insert('comments', {
+        'title': '단아치과의원',
         'memoId': memoId2,
         'content': '원장님 미팅, 다음번에 브로셔 가지고 다시 한 번 미팅',
         'createdAt': DateTime.now().toIso8601String(),

@@ -73,7 +73,16 @@ class _MemoListScreenState extends State<MemoListScreen> {
     return FutureBuilder<List<Memo>>(
       future: memos,
       builder: (context, snapshot) {
-        if (!snapshot.hasData) return Center(child: CircularProgressIndicator());
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Center(child: CircularProgressIndicator());
+        }
+        if (snapshot.hasError) {
+          return Center(child: Text('에러 발생: ${snapshot.error}'));
+        }
+        if (!snapshot.hasData || snapshot.data!.isEmpty) {
+          return Center(child: Text('데이터가 없습니다.'));
+        }
+
         final memoList = snapshot.data!;
         return Column(
           children: [
