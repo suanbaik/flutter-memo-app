@@ -109,7 +109,6 @@ class _MemoListScreenState extends State<MemoListScreen> {
                             subtitle: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                // 👉 우측 상단 수정/삭제 버튼
                                 Padding(
                                   padding: const EdgeInsets.only(right: 8.0),
                                   child: Row(
